@@ -12,13 +12,16 @@ public class CarService implements CarServiceInt {
 
     private List<Car> carList = new ArrayList<>();
 
-    @Override
-    public List<Car> getAllCars() {
+    {
         carList.add(new Car("AUDI", "Black", 2005));
         carList.add(new Car("BMW", "Orange", 2013));
         carList.add(new Car("Rower", "White", 2015));
         carList.add(new Car("Chevrolet", "Yellow", 2022));
         carList.add(new Car("Lambo", "Red", 2012));
+    }
+
+    @Override
+    public List<Car> getAllCars() {
         return carList;
     }
     @Override
@@ -32,6 +35,4 @@ public class CarService implements CarServiceInt {
         }
             return carList.stream().limit(limit).collect(Collectors.toList());
     }
-
-
 }
